@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+	
+	<!-- <link rel="stylesheet" href="//cdn.quilljs.com/1.3.1/quill.bubble.css"> -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href='css/dragula.css' rel='stylesheet' type='text/css' />
+	<style type="text/css">
+		table td{height:60px;     background-color: #f1f1f1;}
+		.ql-editor,.ql-container{ height:auto; }
+		.ql-editor{ padding: 0; }
+		.ql-container{ font-size: inherit; }
+		.editor{ border:0px dashed #333; transition: all .3s ease; }
+		.editor:hover{ border:1px dashed #333; }
+	</style>
+</head>
+<body>
+<header>
+	<ul class="mail_action">
+		<li><a>Preview</a></li>
+		<li><a>Send Test Mail</a></li>
+	</ul>
+	<button class="save_btn">Save</button>
+</header>
+<main>
+	<div class="wrapper"  style="max-width: 800px; width:100%; height:100vh;    margin-left: 100px; background:#fff;" >
+		<ul id="right">
+			asd
+		</ul>
+		<!-- <div class="w_block">
+			<a class="w_block_addTemplateElement">+</a>
+			<p class="ptag" onclick="ptagclick(this)" style="font-size:16px; color:#000; font-weight: bold; ">Something Text</p>
+		</div> -->
+	</div>
+</main>
+<aside>
+	<ul class="tabs clr">
+		<li><a class="isactiveTab" data-id="tc1">Structure</a></li>
+		<li><a data-id="tc2">Components</a></li>
+		<li><a data-id="tc3">Body</a></li>		
+	</ul>
+	<section class="tabs_content">
+		<section class="tab_content" id="tc2">
+			<!-- <a id="d1" data-box='<h1 style="color:red;">hello</h1>' draggable="true"
+  ondragstart="drag(event,this)">Image</a> -->
+  			<!-- <a id="d1" data-box='<h1 style="color:red;">hello</h1>' draggable="true">Image</a> -->
+			<a data-componentKey="ck_text" ondragstart="drag(event,this)" draggable="true">Text</a>	
+			<a data-componentKey="ck_button" ondragstart="drag(event,this)" draggable="true">List</a>	
+			<a data-componentKey="ck_seprator" ondragstart="drag(event,this)" draggable="true">Seprator</a>	
+			<a data-componentKey="ck_blankrow" ondragstart="drag(event,this)" draggable="true">Blank Row</a>	
+			<a data-componentKey="ck_raw" ondragstart="drag(event,this)" draggable="true">Raw HTML</a>
+			<a data-componentKey="ck_image" ondragstart="drag(event,this)" draggable="true">Image</a>
+
+		</section>
+		<section  class="tab_content" id="tc1"  style="display: block;" >
+			<ul class="struct_tab" id="left" >
+				<li class="struct_tab__li" data-gridKey="grid_1"  id="t">
+					<div class="col col_1 clr">
+						<i></i>
+					</div>
+				</li>
+				<li class="struct_tab__li" data-gridKey="grid_2">
+					<div class="col col_2 clr">
+						<i></i>
+						<i></i>
+					</div>
+				</li>
+				<li class="struct_tab__li" data-gridKey="grid_2_1/3">
+					<div class="col col_1-3 clr">
+						<i></i>
+						<i></i>
+					</div>
+				</li>
+				<li class="struct_tab__li" data-gridKey="grid_2_3/1">
+					<div class="col col_3-1 clr" >
+						<i></i>
+						<i></i>
+					</div>
+				</li>
+				<li class="struct_tab__li" data-gridKey="grid_3">
+					<div class="col col_3 clr">
+						<i></i>
+						<i></i>
+						<i></i>
+					</div>
+				</li>
+				<li class="struct_tab__li" data-gridKey="grid_4">
+					<div class="col col_4 clr">
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section class="tab_content" id="tc3" >
+			<h3 class="tab_content__h3">PROPERTIES</h3>
+			<div class="tab_content_prop">
+				<div class="tab_content_prop__item clr">
+					<p>Position</p>
+					<span>
+						<label data-label="X">
+							<input type="text" value="50px" />
+						</label>
+						<label data-label="Y">
+							<input type="text"  value="20px" />
+						</label>
+					</span>
+				</div>
+				<div class="tab_content_prop__item clr">
+					<p>Size</p>
+					<span>
+						<label data-label="Width">
+							<input type="text"  value="100%" />
+						</label>
+						<label data-label="Height">
+							<input type="text"  value="10%" />
+						</label>
+					</span>
+				</div>
+			</div>
+			<h3 class="tab_content__h3">PROPERTIES</h3>
+		</section>
+		<section class="attrPropContainer">
+			
+			<div id="showAllProp"></div>
+		</section>
+	</section>
+</aside>
+<script src='js/dragula.js'></script>
+<!-- <script src="//cdn.quilljs.com/1.3.1/quill.js"></script> -->
+<script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
+
+<script src="js/main.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
