@@ -3,46 +3,46 @@ const gridTemplatesAll = {
 	"grid_1" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td class="ve_td" ondrop="handleDrop(event,this)" align="left" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_2" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="50%" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
-			<td width="50%" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="50%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="50%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_2_1/3" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="70%" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
-			<td width="30%" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="70%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="30%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_2_3/1" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="30%" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
-			<td width="70%" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="30%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="70%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_3" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="33%" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
-			<td width="33%" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
-			<td width="33%" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>
 	`,
 	"grid_4" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="25%" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
-			<td width="25%" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
-			<td width="25%" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
-			<td width="25%" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>
 	`
@@ -51,7 +51,7 @@ const gridTemplatesAll = {
 //grid template end
 const componentAll={
 	"ck_text" : `<p class="editor" ondblclick="makeEditable(event,this)" data-ce="1">Hello Hi Pakiya !!</p>`,
-	"ck_button" : `<input type="button" value="Button" style="background-color:#000000; color:#ffffff; font-size:16px;"  />`,
+	"ck_button" : `<input type="button" value="Button"  class="ve_button" style="background-color:#000000; color:#ffffff; font-size:16px; text-align:left;"  />`,
 	"ck_blankrow" : `<p style=" background-color:#ff0000;">Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.</p>`,
 	"ck_seprator" : `<p style="border-bottom:2px solid #000000;"></p>`,
 	"ck_raw" : `<h1  class="editor" ondblclick="makeEditable(event,this)" data-ce="1">Why do we use it?</h1>`,
@@ -67,18 +67,18 @@ const componentAll={
 const componentProps={
 	"counter" : 0,
 	"css_rules" : {
-		fm : "fontFamily",
-		fs : "fontSize",
+		fm : "font-family",
+		fs : "font-size",
 		co : "color",
-		fw : "fontWeight",
-		lh : "lineHeight",
-		ta : "textAlign",
-		td : "textDecoration",
-		bg : "backgroundColor",
+		fw : "font-weight",
+		lh : "line-height",
+		ta : "text-align",
+		td : "text-decoration",
+		bg : "background-color",
 		bo : "border",
 		he : "height",
 		wi : "width",
-		mw : "maxWidth",
+		mw : "max-width",
 		dp : "display"
 	},
 	"attrib" : {
@@ -92,12 +92,21 @@ const componentProps={
 		bg : "bgcolor",
 		hr : "href",
 		tr : "target",
-		sr : "src"
+		sr : "src",
+		val : "value"
 
 	},
 	"image_prop" : { 
-		"css" : ["co", "wi", "he", "bo"],
+		"css" : ["co", "wi", "he", "bo", "ta"],
 		"atr" : ["sr","at"]
+	},
+	"button_prop" : {
+		"css" : ["co", "bg", "fs"],
+		"atr" : ["val"]	
+	},
+	"td_prop" : {
+		"css" : ["co", "fs"],
+		"atr" : ["bg", "al", "he", "wi"]	
 	}
 };
 
@@ -183,26 +192,39 @@ o.genTemplateLogic = function(whatTodo,propTo, propToVal){
 //It shows component layer element that can be manipulated here
 o.initImageEdit = function(){
 	document.querySelector("body").addEventListener("click",function(e){
+		var imgCssProp = "", imgAttr = "", formTemp = "";
+
+		//checking click exist or not
 		if(e.target){
-			
+			if(e.target.matches(".ve_image")){
+				tm(e,"image_prop");
+			}
+			else if(e.target.matches(".ve_button")){
+				tm(e,"button_prop");
+			}
+			else if(e.target.matches(".ve_td")){
+				tm(e,"td_prop");
+			}
 		}
-		if(e.target && e.target.matches("img.ve_image")){
 
-			var imgCssProp = componentProps.image_prop.css,
-				imgAttr = componentProps.image_prop.atr,
-				formTemp = `<h3 class="tab_content__h3">PROPERTIES</h3><form name="${e.target.id}">`;
+		//check type of click and action
+		function tm(e,image_prop){
 
+			imgCssProp = componentProps[image_prop].css;
+			imgAttr = componentProps[image_prop].atr;
+			formTemp = `<h3 class="tab_content__h3">PROPERTIES</h3><form name="${e.target.id}">`;
+			debugger;
 			//toggle component panel
 			document.querySelectorAll(".attrPropContainer")[0].classList.toggle("isActive");	
 
 			//loop all css props
 			imgCssProp.forEach(function(element, index) {
-				var tmpCssProp = componentProps.css_rules[element].toString().toLowerCase(),
+				var tmpCssProp = componentProps.css_rules[element].toString(),
 					tmpCssPropVal = e.target.style[tmpCssProp];
 				console.log(tmpCssPropVal);
 
 				
-				if(tmpCssProp === "color")
+				if(tmpCssProp === "color" || tmpCssProp === "background-color")
 					formTemp += o.genTemplateLogic("css_color",tmpCssProp, tmpCssPropVal);
 				else
 					formTemp += o.genTemplateLogic("css_normal",tmpCssProp, tmpCssPropVal);
@@ -311,12 +333,27 @@ o.initDragula = function(){
 		  	var gridkey = el.getAttribute("data-gridKey");
 		  	el.classList = "grid";
 		  	el.classList.add("isGridAlreadyAdded");
-		  	el.innerHTML = o.ve_grids[gridkey];
+		  	el.innerHTML = setUniqueIdToEl(o.ve_grids[gridkey]);
 	    }
 	  	// console.log("el,source,handle,sibling====<");	
 	});
 }
 
+
+//used to set unique_id
+function setUniqueIdToEl(dataStr){
+	var id = "", arr;
+	
+	arr = dataStr.split(/(class="ve)/g);
+	arr.forEach(function(el,i,ar){
+		if(el==='class="ve'){
+			id = 'id="uid'+(componentProps.counter+=1)+'" ';
+			ar[i] = id+el;
+		}
+	});
+	return arr.join("");
+
+}
 
 //**component drag and drop**//
 
