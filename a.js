@@ -1,1 +1,0 @@
-var ak = "this is string";

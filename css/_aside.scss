@@ -47,8 +47,8 @@ aside{position: fixed;
     p{    color: #989A9C; width:30%; float:left; font-size: 13px;
     letter-spacing: 2px;}
     span{ width:70%; float:right; }
-    label{ width:45%; display:inline-block;
-        input{ padding: 3px 4px;
+    .tab_content_prop__label{ width:45%; display:inline-block;
+        input[type="text"]{ padding: 3px 4px;
     width: 100%;
     background: rgba(255,255,255,.05);
     border-radius: 2px;
@@ -66,7 +66,7 @@ aside{position: fixed;
     }
 }
 .contentNodes{
-    label{ width:100%;}
+    .tab_content_prop__label{ width:100%;}
 }
 .struct_tab{}
 .struct_tab__li{margin: 20px 20px;
@@ -114,3 +114,44 @@ aside{position: fixed;
 .col_4{
     i{width:25%;}}
 
+
+/*icons*/
+.leftAlign{ background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAaUlEQVRIS2NkoDFgpLH5DHSzoIGBgaGeyr5pZGBgaID5wIGBgQGEqQkOMDAwHBgSQQQOClxep0YQgYOCkAXUDHsUs2A+GE1FOIOYGkE0morITsGjZRE86EZIKiI7qRDSSLcKh5BDyJYHAI/LGBnWJj37AAAAAElFTkSuQmCC') no-repeat;}
+.rightAlign{ background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAbklEQVRIS2NkoDFgpLH5DHSzoIGBgaGeyr5pZGBgaID5wIGBgQGEqQkOMDAwHKBbECG7nJLgAgcLsmHYfEBJcIGDhZAF1IwHeDKlJFhwOWg0FWENmdFURFIKHk1FIy0VkZQ8SFE8IBUOKQ4kqBYA/7wYGSIG48oAAAAASUVORK5CYII=') no-repeat;}
+.centerAlign{ background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAbklEQVRIS2NkoDFgpLH5DHSzoIGBgaGeyr5pZGBgaID5wIGBgQGEqQkOMDAwHKBbECG7nJLgAgcLsmHYfEBJcIGDhZAF1IwHeDKlJFhwOWg0FWENmdFURFIKHk1FIy0VkZQ8SFE8IBUOKQ4kqBYA/7wYGSIG48oAAAAASUVORK5CYII=') no-repeat;}
+.justifyAlign{ background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAVUlEQVRIS+2VQQoAIAgEp5/1s+pnPS06dG0hSjqs4G3VdRBMPI70uD9hAypQLm/TgLo2yMDMm9GBbkQ7pEYkD86IjEgSkAJf0WeIpJ1TQdjDOTUo6wbbdBgZy2YHdgAAAABJRU5ErkJggg==') no-repeat;}
+
+.aLeft{background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAABHNCSVQICAgIfAhkiAAAAEdJREFUOI1jYGBg+M9ABcBEDUOoahALEvsAA3HedMQmyAjVDKOJAYzYBAdfGFHNIAaGEZGOKPLi4PMaTcLoIKWGDdN0RDWDAM4CCOWd2xRlAAAAAElFTkSuQmCC') no-repeat;width: 18px;
+height: 20px;}
+.aRight{background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAABHNCSVQICAgIfAhkiAAAAElJREFUOI3NkkEKACAMw6L4MX+uL5s3j6KsSHMdpNAVNEQVifATNWAAkXB0gJKUbIdfRzKRCsOO2uF2O4sCjl/70tFUhbxguKMFfQMI5QFkuKwAAAAASUVORK5CYII=') no-repeat;width: 18px;
+height: 20px;}
+.aCenter{background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAYAAACEYr13AAAABHNCSVQICAgIfAhkiAAAAGJJREFUOI1jYCAM/uOTZCLCALyABY2vjUMduvhVGIMRTQKvc5EAXB/FXhh4A9ADcSYWNek4xIkGtE8HPUSow6mGkYH4uMcKBj4aKTaAkYGBwZyAmhMMDAwWlFhC23Qw8AYAAOd/CjX29oNDAAAAAElFTkSuQmCC') no-repeat;width: 16px;
+height: 20px; }
+
+.vTop{background:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAABHNCSVQICAgIfAhkiAAAADtJREFUOI1jZGBg+M8w1MB2BoirkTEPVE4Ci9xqZM1M1HbNqIGjBg4GA1lIVP+CgYGBEZ+Cwe/lEWggAAJmC4jElG/IAAAAAElFTkSuQmCC') no-repeat;width: 20px;
+height: 18px;}
+.vMiddle{background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAABHNCSVQICAgIfAhkiAAAADxJREFUOI1jYEAF5gwMDP/R8EkGEgATKYqHhIENDKjB0UCpgQTBCDSQkQESuDQDhBL2aCzTwUB0MAJKGwC/EBgJUCmWHQAAAABJRU5ErkJggg==')  no-repeat;width: 20px;
+height: 17px;
+}
+.vBottom{background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAABHNCSVQICAgIfAhkiAAAADpJREFUOI1jYMAE2xkYGP6jYR4s6rACJmIVjho4eA2UYMBMAaspMZAgGDVw1MDBYCDVASMDJPtQDQAAIIAKna0Z8VYAAAAASUVORK5CYII=') no-repeat;width: 20px;
+height: 18px;}
+/*icons*/
+.algnGroup{
+    .aAlign{     float: left; position: relative;
+    background-color: #2e3032;
+    height: 26px;
+    width: 26px;
+    text-align: center;
+    vertical-align: middle;
+    display: table;
+    border-radius: 2px;
+    margin-right: 4px; overflow:hidden; transition:border .3s ease;cursor: pointer;
+    &:hover{border: 1px solid #000;}
+    }
+    i{display:inline-block;position: relative;
+    width: 100%;
+    height: 100%;
+    background-position: center center;}
+    input[type="radio"]{height:0; width:0; overflow:hidden; border:none; position: absolute; }
+    input:checked + i{background-color:#676767;}
+}

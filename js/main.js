@@ -3,46 +3,46 @@ const gridTemplatesAll = {
 	"grid_1" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td class="ve_td" ondrop="handleDrop(event,this)" align="left" ondragover="handleAllowDrop(event)"></td>
+			<td class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_2" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="50%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
-			<td width="50%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="50%" class="ve_td" ondrop="handleDrop(event,this)"  align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="50%" class="ve_td" ondrop="handleDrop(event,this)"  align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_2_1/3" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="70%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
-			<td width="30%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="70%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="30%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_2_3/1" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="30%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
-			<td width="70%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="30%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="70%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_3" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
-			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
-			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>
 	`,
 	"grid_4" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
-			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
-			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
-			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" ondragover="handleAllowDrop(event)"></td>
+			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>
 	`
@@ -106,7 +106,7 @@ const componentProps={
 	},
 	"td_prop" : {
 		"css" : ["co", "fs"],
-		"atr" : ["bg", "al", "he", "wi"]	
+		"atr" : ["bg", "al", "va", "he", "wi"]	
 	}
 };
 
@@ -157,7 +157,7 @@ o.genTemplateLogic = function(whatTodo,propTo, propToVal){
 			return `<div class="tab_content_prop__item clr">
 					<p>${propTo}</p>
 					<span>
-						<label>
+						<label class="tab_content_prop__label">
 							<input type="text" name="css[${propTo}]" value="${propToVal}">
 						</label>
 					</span>
@@ -167,7 +167,7 @@ o.genTemplateLogic = function(whatTodo,propTo, propToVal){
 			return `<div class="tab_content_prop__item clr">
 					<p>${propTo}</p>
 					<span>
-						<label>
+						<label  class="tab_content_prop__label">
 							<input type="color"  name="css[${propTo}]" oninput="getColorNewValue(event)" value="${propToVal}">
 						</label>
 					</span>
@@ -177,12 +177,52 @@ o.genTemplateLogic = function(whatTodo,propTo, propToVal){
 			return `<div class="tab_content_prop__item contentNodes clr">
 						<p>${propTo}</p>
 						<span>
-							<label>
+							<label  class="tab_content_prop__label">
 								<input type="text" name="atr[${propTo}]" value="${propToVal}" required />
 							</label>
 						</span>
 					</div>`;
 
+		case "attr_align":
+
+			var createAlignGrp = [];
+			createAlignGrp[0] = (propToVal === "left")?'checked':'';
+			createAlignGrp[1] = (propToVal === "center")?'checked':'';
+			createAlignGrp[2] = (propToVal === "right")?'checked':'';
+
+			return `<div class="tab_content_prop__item clr">
+						<p>${propTo}</p>
+						<span>
+							<label class="tab_content_prop__label">
+								<div class="algnGroup">
+									<label class="aAlign"><input type="radio" name="atr[${propTo}]" value="left" ${createAlignGrp[0]}  /><i class="aLeft"></i></label>
+									<label class="aAlign"><input type="radio" name="atr[${propTo}]" value="center" ${createAlignGrp[1]} /><i class="aCenter"></i></label>
+									<label class="aAlign"><input type="radio" name="atr[${propTo}]" value="right" ${createAlignGrp[2]} /><i class="aRight"></i></label>
+								</div>
+							</label>
+						</span>
+					</div>`;			
+
+		case "attr_valign":
+
+			var createvAlignGrp = [];
+			createvAlignGrp[0] = (propToVal === "top")?'checked':'';
+			createvAlignGrp[1] = (propToVal === "middle")?'checked':'';
+			createvAlignGrp[2] = (propToVal === "bottom")?'checked':'';
+
+			return `<div class="tab_content_prop__item clr">
+						<p>${propTo}</p>
+						<span>
+							<label class="tab_content_prop__label">
+								<div class="algnGroup">
+									<label class="aAlign"><input type="radio" name="atr[${propTo}]" value="top" ${createvAlignGrp[0]}  /><i class="vTop"></i></label>
+									<label class="aAlign"><input type="radio" name="atr[${propTo}]" value="middle" ${createvAlignGrp[1]} /><i class="vMiddle"></i></label>
+									<label class="aAlign"><input type="radio" name="atr[${propTo}]" value="bottom" ${createvAlignGrp[2]} /><i class="vBottom"></i></label>
+								</div>
+							</label>
+						</span>
+					</div>`;
+								
 		default:
 			return "";
 	}
@@ -213,7 +253,7 @@ o.initImageEdit = function(){
 			imgCssProp = componentProps[image_prop].css;
 			imgAttr = componentProps[image_prop].atr;
 			formTemp = `<h3 class="tab_content__h3">PROPERTIES</h3><form name="${e.target.id}">`;
-			debugger;
+			
 			//toggle component panel
 			document.querySelectorAll(".attrPropContainer")[0].classList.toggle("isActive");	
 
@@ -240,9 +280,15 @@ o.initImageEdit = function(){
 			imgAttr.forEach(function(element, index) {
 				var tmpAttrProp = componentProps.attrib[element].toString().toLowerCase(),
 					tmpAttrPropVal = e.target.getAttribute(tmpAttrProp);
-				console.log(tmpAttrPropVal);
+
 				if(o.validate(tmpAttrPropVal)){//check attribute exist or not
-					formTemp += o.genTemplateLogic("attr_normal",tmpAttrProp, tmpAttrPropVal);
+					debugger;
+					if(tmpAttrProp === "align")
+						formTemp += o.genTemplateLogic("attr_align",tmpAttrProp, tmpAttrPropVal);
+					else if(tmpAttrProp === "valign")
+						formTemp += o.genTemplateLogic("attr_valign",tmpAttrProp, tmpAttrPropVal);
+					else
+						formTemp += o.genTemplateLogic("attr_normal",tmpAttrProp, tmpAttrPropVal);
 				}
 			});
 			formTemp += `</form>`;
@@ -266,6 +312,7 @@ function renderUpdatedData(event,formName){
 		_cssString ="", _atrString = {},
 		whereToAppedData = document.getElementById(formName);
 
+	//this function will check key name contacins whtToChk
 	function checkFormName(str,whtToChk){
 		return ( str.indexOf(whtToChk) >=0 ) ? ( true ) : ( false );
 	}
@@ -289,7 +336,12 @@ function renderUpdatedData(event,formName){
 
 	//add attribute string to dom
 	for(var k in _atrString){
-		whereToAppedData[k] = _atrString[k];		
+		//some attributes like valign not supported
+		//for that case we are setting here manually
+		if(whereToAppedData[k] === undefined)
+			whereToAppedData.setAttribute(k,_atrString[k])
+		else
+			whereToAppedData[k] = _atrString[k];		
 	}
 
 }
