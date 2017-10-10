@@ -289,6 +289,20 @@ aside {
 .algnGroup input:checked + i {
   background-color: #676767; }
 
+.showHighlightedTd {
+  box-shadow: 1px 1px 10px 0px #1a6cc5;
+  position: relative; }
+
+.showHighlightedTd:after {
+  content: "Content";
+  position: absolute;
+  top: -24px;
+  right: 0px;
+  background: #0e0d0d;
+  padding: 5px 10px;
+  font-size: 10px;
+  color: #fff; }
+
 .btnW1, .w_block_addTemplateElement {
   background-color: #c9c9c9;
   color: #fff;

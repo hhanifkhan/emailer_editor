@@ -3,46 +3,46 @@ const gridTemplatesAll = {
 	"grid_1" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" align="left" bgcolor="#ffffff" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_2" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="50%" class="ve_td" ondrop="handleDrop(event,this)"  align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
-			<td width="50%" class="ve_td" ondrop="handleDrop(event,this)"  align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="50%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%"  bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="50%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%"  bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_2_1/3" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="70%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
-			<td width="30%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="70%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="30%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_2_3/1" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="30%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
-			<td width="70%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="30%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="70%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_3" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
-			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
-			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>
 	`,
 	"grid_4" : `
 	<table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
-			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
-			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
-			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>
 	`
@@ -50,11 +50,11 @@ const gridTemplatesAll = {
 
 //grid template end
 const componentAll={
-	"ck_text" : `<p class="editor" ondblclick="makeEditable(event,this)" data-ce="1">Hello Hi Pakiya !!</p>`,
+	"ck_text" : `<p class="editor" ondblclick="makeEditable(event,this)" data-ce="1" class="ve_text" style="    border: 1px solid green;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>`,
 	"ck_button" : `<input type="button" value="Button"  class="ve_button" style="background-color:#000000; color:#ffffff; font-size:16px; text-align:left;"  />`,
-	"ck_blankrow" : `<p style=" background-color:#ff0000;">Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.</p>`,
-	"ck_seprator" : `<p style="border-bottom:2px solid #000000;"></p>`,
-	"ck_raw" : `<h1  class="editor" ondblclick="makeEditable(event,this)" data-ce="1">Why do we use it?</h1>`,
+	"ck_blankrow" : `<p  class="ve_blank" style=" background-color:#ff0000;">Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.</p>`,
+	"ck_seprator" : `<p  class="ve_seprator" style="border-bottom:2px solid #000000;"></p>`,
+	"ck_raw" : `<h1  class="ve_raw editor" ondblclick="makeEditable(event,this)" data-ce="1">Why do we use it?</h1>`,
 	"ck_image" : `<img src="https://images5.alphacoders.com/637/thumb-1920-637668.jpg" class="ve_image" alt="this is image" width="100%" style="    border: 1px solid green;
     color: red;
     font-size: 10px;
@@ -183,6 +183,16 @@ o.genTemplateLogic = function(whatTodo,propTo, propToVal){
 						</span>
 					</div>`;
 
+		case "attr_bgcolor":
+			return `<div class="tab_content_prop__item contentNodes clr">
+						<p>${propTo}</p>
+						<span>
+							<label  class="tab_content_prop__label">
+								<input type="color" name="atr[${propTo}]" oninput="getColorNewValue(event)" value="${propToVal}" />
+							</label>
+						</span>
+					</div>`;
+
 		case "attr_align":
 
 			var createAlignGrp = [];
@@ -228,6 +238,13 @@ o.genTemplateLogic = function(whatTodo,propTo, propToVal){
 	}
 };
 
+o.toggleClassTdOnFocus = function(a,b){
+	document.querySelectorAll(".ve_td").forEach(function(el){
+		el.classList.remove(b);
+	});
+	a.classList.add(b);
+};
+
 //when user click on element
 //It shows component layer element that can be manipulated here
 o.initImageEdit = function(){
@@ -243,6 +260,7 @@ o.initImageEdit = function(){
 				tm(e,"button_prop");
 			}
 			else if(e.target.matches(".ve_td")){
+				o.toggleClassTdOnFocus(e.target,"showHighlightedTd");//adding class
 				tm(e,"td_prop");
 			}
 		}
@@ -282,11 +300,13 @@ o.initImageEdit = function(){
 					tmpAttrPropVal = e.target.getAttribute(tmpAttrProp);
 
 				if(o.validate(tmpAttrPropVal)){//check attribute exist or not
-					debugger;
+					// debugger;
 					if(tmpAttrProp === "align")
 						formTemp += o.genTemplateLogic("attr_align",tmpAttrProp, tmpAttrPropVal);
 					else if(tmpAttrProp === "valign")
 						formTemp += o.genTemplateLogic("attr_valign",tmpAttrProp, tmpAttrPropVal);
+					else if(tmpAttrProp === "bgcolor")
+						formTemp += o.genTemplateLogic("attr_bgcolor",tmpAttrProp, tmpAttrPropVal);
 					else
 						formTemp += o.genTemplateLogic("attr_normal",tmpAttrProp, tmpAttrPropVal);
 				}
@@ -312,11 +332,12 @@ function renderUpdatedData(event,formName){
 		_cssString ="", _atrString = {},
 		whereToAppedData = document.getElementById(formName);
 
-	//this function will check key name contacins whtToChk
+	//this function will check key name contain whtToChk
 	function checkFormName(str,whtToChk){
 		return ( str.indexOf(whtToChk) >=0 ) ? ( true ) : ( false );
 	}
 
+	//Iterating all css and atr's
 	for(var key in _elProps){
 		if(checkFormName(key,"css")){
 			_cssString += key.match(/\[(.*?)\]/)[1] +":"+ _elProps[key].value+";";
