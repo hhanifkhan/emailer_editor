@@ -68,18 +68,56 @@ aside{position: fixed;
 .contentNodes{
     .tab_content_prop__label{ width:100%;}
 }
+.handle{background: rgba(67, 228, 207, 0.13);
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center; display:none;
+    
+} 
 .struct_tab{}
-.struct_tab__li{margin: 20px 20px;
-    list-style-type: none;}
+.struct_tab__li{margin: 20px 20px; position: relative;    cursor: all-scroll;
+    list-style-type: none;transition:transform .3s ease;
+    .handle{right: 0;bottom: 0;
+    }
+&:hover .handle{
+        display: block;
+     
+    }
+}
+.isGridAlreadyAdded{
+    .handle{ display: inline-block;
+    background-color: #1fa9d0;
+    z-index: 1;
+    height: 26px;
+    width: 26px;
+    border-radius: 50% 0px 0px 50%;
+    left: -27px;
+    transform: translateY(-50%);
+    top: 50%;
+        cursor: all-scroll;
+    }
+    .handle:after{content:"";display: inline-block;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAFVBMVEUAAAD///////////////////////9Iz20EAAAABnRSTlMAXz+/Dy+e5i/HAAAAR0lEQVQI12NABoyGUIZYmgCEkZaWAGEEJQVA5SACYiAGmwADY5oDkOGWyMCcBgbJQBElpSQltUS4GqguCGBJYYCbjLALYTsAkAoNR66JPpUAAAAASUVORK5CYII=) no-repeat;
+    height: 16px;
+    width: 16px;
+    position:absolute;top:50%; left:50%; transform:translate(-50%, -50%);}
+}
+
+.initialTdClass{    background: #dcdedc;}
+.initialTdClass:before{     content: "No content here. Drag new from 'Components' panel.";
+    font-size: 10px;
+    color: #1695bd;
+    display: block;
+    text-align: center; }
+
 .col{ border: 1px solid #0e0e0e; cursor: pointer;
-    padding: 10px; transition:transform .3s ease;
+    padding: 10px; 
         i{ display: inline-block;
     float: left;
     height: 30px;
     border: 1px dotted #fff;}
- &:hover{
-        transform:scale(1.05);
-    }
+ 
 }
 
 .btnUpdate{color: #44bd42;
@@ -164,3 +202,5 @@ height: 18px;}
     padding: 5px 10px;
     font-size: 10px;
     color: #fff;}
+
+ 

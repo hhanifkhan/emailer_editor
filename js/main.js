@@ -1,48 +1,48 @@
 //grid template
 const gridTemplatesAll = {
 	"grid_1" : `
-	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<div class="handle"></div><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" align="left" bgcolor="#ffffff" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td class="ve_td initialTdClass" ondrop="handleDrop(event,this)" height="100%" data-c="false" width="100%" align="left" bgcolor="#ffffff" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_2" : `
-	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<div class="handle"></div><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="50%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%"  bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
-			<td width="50%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%"  bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="50%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%"  bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="50%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%"  bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_2_1/3" : `
-	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<div class="handle"></div><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="70%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
-			<td width="30%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="70%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="30%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_2_3/1" : `
-	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<div class="handle"></div><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="30%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
-			<td width="70%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="30%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="70%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_3" : `
-	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<div class="handle"></div><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
-			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
-			<td width="33%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="33%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="33%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="33%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>
 	`,
 	"grid_4" : `
-	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<div class="handle"></div><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
-			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
-			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
-			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
-			<td width="25%" class="ve_td" ondrop="handleDrop(event,this)" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="25%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="25%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="25%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
+			<td width="25%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>
 	`
@@ -381,6 +381,7 @@ o.init=function(){
 var drake;
 o.initDragula = function(){
 	drake = dragula([document.getElementById("left"), document.getElementById("right")], {
+
 	  copy: function (el, source, handle, sibling) {
 	  	// console.log("el,source====>");
 	  	// console.log(el,source);
@@ -391,6 +392,9 @@ o.initDragula = function(){
 	  	//el.innerHTML = o.ve_grids[gridkey];
 	    return source === document.getElementById("left");
 
+	  },
+	   moves: function (el, container, handle) {
+	    return handle.classList.contains('handle');
 	  },
 	  accepts: function (el, target,source, sibling) {
 	  	// console.log(el,target,source,sibling);
@@ -441,6 +445,7 @@ function allowDrop(ev) {
 }
 
 //manage drag
+//el=current dragged element
 function drag(ev,el) {
 	console.log("drag wala event");
 	console.log(el);
@@ -456,19 +461,30 @@ function drag(ev,el) {
 	newElAfterId = componentAll[getComponentKey].substr(0, position) + id + componentAll[getComponentKey].substr(position);
 
   // ev.dataTransfer.setData("text/html", ev.target.id);
-  ev.dataTransfer.setData("text/html", newElAfterId);
+  ev.dataTransfer.setData("text/html", newElAfterId); //new content
+  ev.dataTransfer.setData("elShouldDragged", true); //restrict drag only from specific function
 }
 
 //manage drop
+//el=where is the drop position
+//ev=
 function handleDrop(ev,el){
-	ev.preventDefault();
-	console.log("handleDrop===>asdasd");
-	console.log(ev,el);
-	console.log("<===asdasd");
-	var data=ev.dataTransfer.getData("text/html");
-  	console.log(data);
-  	el.innerHTML +=  data;
+	if(ev.dataTransfer.getData("elShouldDragged")==="true"){
 
+		//checking already content exist or not on dropzone
+		if(el.getAttribute("data-c") === "false"){
+			el.setAttribute("data-c","true");
+			el.classList.remove("initialTdClass");
+		}
+
+		ev.preventDefault();
+		console.log("handleDrop===>asdasd");
+		console.log(ev,el);
+		console.log("<===asdasd");
+		var data=ev.dataTransfer.getData("text/html");
+	  	console.log(data);
+	  	el.innerHTML +=  data;
+  }
 }
 
 //**component drag and drop ends**//

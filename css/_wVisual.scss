@@ -22,7 +22,7 @@
 	@extend .btnW1;
 }
 .grid{
-	    display: block;
+	    display: block; position: relative;
     border: 1px dashed #bfbfbf;
     min-height: 40px;
     >table > tbody> td{color:red}
