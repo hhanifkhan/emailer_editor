@@ -1,34 +1,34 @@
 //grid template
 const gridTemplatesAll = {
 	"grid_1" : `
-	<div class="handle"></div><table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon"></i><i class="deleteIcon"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
 			<td class="ve_td initialTdClass" ondrop="handleDrop(event,this)" height="100%" data-c="false" width="100%" align="left" bgcolor="#ffffff" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_2" : `
-	<div class="handle"></div><table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon"></i><i class="deleteIcon"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
 			<td width="50%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%"  bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 			<td width="50%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%"  bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_2_1/3" : `
-	<div class="handle"></div><table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon"></i><i class="deleteIcon"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
 			<td width="70%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 			<td width="30%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_2_3/1" : `
-	<div class="handle"></div><table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon"></i><i class="deleteIcon"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
 			<td width="30%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 			<td width="70%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_3" : `
-	<div class="handle"></div><table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon"></i><i class="deleteIcon"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
 			<td width="33%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 			<td width="33%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
@@ -37,7 +37,7 @@ const gridTemplatesAll = {
 	</table>
 	`,
 	"grid_4" : `
-	<div class="handle"></div><table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon"></i><i class="deleteIcon"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
 			<td width="25%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 			<td width="25%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
@@ -51,7 +51,7 @@ const gridTemplatesAll = {
 //grid template end
 const componentAll={
 	"ck_text" : `<p class="editor" ondblclick="makeEditable(event,this)" data-ce="1" class="ve_text" style="    border: 1px solid green;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>`,
-	"ck_button" : `<input type="button" value="Button"  class="ve_button" style="background-color:#000000; color:#ffffff; font-size:16px; text-align:left;"  />`,
+	"ck_button" : `<table width="100%" class="tabl_inner"><tr><td><div class="innerFilter"><i class="dragIcon dragInnerContent"></i><i class="copyIcon"></i><i class="deleteIcon"></i></div><input type="button" value="Button"  class="ve_button" style="background-color:#000000; color:#ffffff; font-size:16px; text-align:left;"  /></td></tr></table>`,
 	"ck_blankrow" : `<p  class="ve_blank" style=" background-color:#ff0000;">Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.</p>`,
 	"ck_seprator" : `<p  class="ve_seprator" style="border-bottom:2px solid #000000;"></p>`,
 	"ck_raw" : `<h1  class="ve_raw editor" ondblclick="makeEditable(event,this)" data-ce="1">Why do we use it?</h1>`,
@@ -378,7 +378,7 @@ o.init=function(){
 
 //----copy on drag from right panel to left------------
 //left==what drag,right=where drop
-var drake;
+var drake, arrForNewTds = [];
 o.initDragula = function(){
 	drake = dragula([document.getElementById("left"), document.getElementById("right")], {
 
@@ -404,15 +404,24 @@ o.initDragula = function(){
 	});
 
 	drake.on('drop',function(el, target, source, sibling){
-		// console.log("el,source====>");
-	 //  	console.log(el,source, source, sibling);
-	  	if(!el.classList.contains("isGridAlreadyAdded")){	
-		  	var gridkey = el.getAttribute("data-gridKey");
-		  	el.classList = "grid";
-		  	el.classList.add("isGridAlreadyAdded");
-		  	el.innerHTML = setUniqueIdToEl(o.ve_grids[gridkey]);
+		if(target !== null){
+			arrForNewTds = [];
+			// console.log("el,source====>");
+		 	//  	console.log(el,source, source, sibling);
+		  	if(!el.classList.contains("isGridAlreadyAdded")){	
+			  	var gridkey = el.getAttribute("data-gridKey");
+			  	el.classList = "grid";
+			  	el.classList.add("isGridAlreadyAdded");
+			  	el.innerHTML = setUniqueIdToEl(o.ve_grids[gridkey]);
+			  	if(arrForNewTds.length){
+				  	arrForNewTds.forEach(function(e,i){
+				  		dragInside.containers.push(document.getElementById(e));
+				  	});
+			  	}	
+		    }
+
+		  	// console.log("el,source,handle,sibling====<");	
 	    }
-	  	// console.log("el,source,handle,sibling====<");	
 	});
 }
 
@@ -420,12 +429,13 @@ o.initDragula = function(){
 //used to set unique_id
 function setUniqueIdToEl(dataStr){
 	var id = "", arr;
-	
 	arr = dataStr.split(/(class="ve)/g);
 	arr.forEach(function(el,i,ar){
 		if(el==='class="ve'){
 			id = 'id="uid'+(componentProps.counter+=1)+'" ';
 			ar[i] = id+el;
+			arrForNewTds.push("uid"+componentProps.counter);
+			//dragInside.containers.push(document.getElementById("uid"+componentProps.counter));
 		}
 	});
 	return arr.join("");
@@ -506,3 +516,23 @@ function makeEditable(e,t){
     }
 });
 }
+
+
+
+
+//  dragula([].slice.apply(document.querySelectorAll('.ve_td')),{
+//   moves: function (el, container, handle) {
+//     return handle.classList.contains('oye');
+//   }
+// });
+
+
+//re-arrangement of components inside structured components 
+var dragInside=dragula( [], {
+	accepts: function (el, target, source, sibling){
+    	return target===source;
+    },
+    moves: function (el, container, handle) {
+    	return handle.classList.contains('dragInnerContent');
+    }
+});

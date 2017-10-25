@@ -23,14 +23,50 @@
 }
 .grid{
 	    display: block; position: relative;
-    border: 1px dashed #bfbfbf;
     min-height: 40px;
     >table > tbody> td{color:red}
     &:hover{ -webkit-box-shadow: 0 0 0 2px #03a9f4;
-    box-shadow: 0 0 0 2px #03a9f4;
+    box-shadow: 0 0 0 2px #03a9f4;z-index: 1;
     outline: none;}
 }
+.tabl_inner{position: relative;    border: 2px solid rgba(0,0,0,0);
+td{height:auto; border:none;}
+}
+.copyIcon{background: url('../images/copy.png') no-repeat; height:26px; width:26px; display:inline-block;    image-rendering: -webkit-optimize-contrast;}
+.deleteIcon{background: url('../images/trash.png') no-repeat; height:26px; width:26px; display:inline-block;    image-rendering: -webkit-optimize-contrast;}
+.dragIcon{background: url('../images/drag.png') no-repeat; height:26px; width:26px; display:inline-block;    image-rendering: -webkit-optimize-contrast;}
+.innerFilter{position: absolute; top: 0; right: 0;background: #d8d8d8;
+    border-radius: 3px;    transition: all .2s ease;transform: scale3d(0,0,0);
+    transform-origin: top right;
+    i{cursor: pointer;transform: scale3d(.7,.7,1);    image-rendering: -webkit-optimize-contrast;    position: relative;
+    top: 2px;}
+}
+.tabl_inner:hover{ 
+    border:2px solid #78ABC1;
+    .innerFilter{transform: scale3d(1,1,1);}}
 
+.grid .handle{background: url('../images/drag-w.png') no-repeat; height:26px; width:26px; position:absolute;display: inline-block;
+    background-color: #1fa9d0;
+    z-index: 9;
+    border-radius: 50% 0px 0px 50%;
+    left: -27px;
+    transform: translateY(-50%);
+    top: 50%;
+    cursor: all-scroll;    background-size: 20px auto;
+    background-position: center;
+}    
+.structFiltrs{position: absolute;
+    top: 0;
+    right: -26px;transform-origin: top left;
+    width: 26px;
+    background: #1fa9d0; transform:scale3d(0,0,0); transition:all .3s ease;
+ 
+    .copyIcon{background: url('../images/copy-w.png') no-repeat;background-size:20px auto; background-position: center; cursor:pointer;}
+    .deleteIcon{background: url('../images/trash-w.png') no-repeat;background-size:20px auto; background-position: center; cursor:pointer;}
+}
+.grid:hover{
+    .structFiltrs{transform:scale3d(1,1,1);}
+}
 /*edtior*/
 .medium-toolbar-arrow-under:after{border-color:#000 transparent transparent;top:40px}.medium-toolbar-arrow-over:before{border-color:transparent transparent #000}.medium-editor-toolbar{background-color:#000;border:none;border-radius:50px}.medium-editor-toolbar li button{background-color:transparent;border:none;box-sizing:border-box;color:#ccc;height:40px;min-width:40px;padding:5px 12px;-webkit-transition:background-color .2s ease-in,color .2s ease-in;transition:background-color .2s ease-in,color .2s ease-in}.medium-editor-toolbar li .medium-editor-button-active,.medium-editor-toolbar li button:hover{background-color:#000;color:#a2d7c7}.medium-editor-toolbar li .medium-editor-button-first{border-bottom-left-radius:50px;border-top-left-radius:50px;padding-left:24px}.medium-editor-toolbar li .medium-editor-button-last{border-bottom-right-radius:50px;border-right:none;border-top-right-radius:50px;padding-right:24px}.medium-editor-toolbar-form{background:#000;border-radius:50px;color:#ccc;overflow:hidden}.medium-editor-toolbar-form .medium-editor-toolbar-input{background:#000;box-sizing:border-box;color:#ccc;height:40px;padding-left:16px;width:220px}.medium-editor-toolbar-form .medium-editor-toolbar-input::-webkit-input-placeholder{color:#f8f5f3;color:rgba(248,245,243,.8)}.medium-editor-toolbar-form .medium-editor-toolbar-input:-moz-placeholder{color:#f8f5f3;color:rgba(248,245,243,.8)}.medium-editor-toolbar-form .medium-editor-toolbar-input::-moz-placeholder{color:#f8f5f3;color:rgba(248,245,243,.8)}.medium-editor-toolbar-form .medium-editor-toolbar-input:-ms-input-placeholder{color:#f8f5f3;color:rgba(248,245,243,.8)}.medium-editor-toolbar-form a{color:#ccc;-webkit-transform:translateY(2px);transform:translateY(2px)}.medium-editor-toolbar-form .medium-editor-toolbar-close{margin-right:16px}.medium-editor-toolbar-anchor-preview{background:#000;border-radius:50px;padding:5px 12px}.medium-editor-anchor-preview a{color:#ccc;text-decoration:none}
 

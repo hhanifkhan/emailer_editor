@@ -398,14 +398,102 @@ aside {
 .grid {
   display: block;
   position: relative;
-  border: 1px dashed #bfbfbf;
   min-height: 40px; }
   .grid > table > tbody > td {
     color: red; }
   .grid:hover {
     -webkit-box-shadow: 0 0 0 2px #03a9f4;
     box-shadow: 0 0 0 2px #03a9f4;
+    z-index: 1;
     outline: none; }
+
+.tabl_inner {
+  position: relative;
+  border: 2px solid transparent; }
+  .tabl_inner td {
+    height: auto;
+    border: none; }
+
+.copyIcon {
+  background: url("../images/copy.png") no-repeat;
+  height: 26px;
+  width: 26px;
+  display: inline-block;
+  image-rendering: -webkit-optimize-contrast; }
+
+.deleteIcon {
+  background: url("../images/trash.png") no-repeat;
+  height: 26px;
+  width: 26px;
+  display: inline-block;
+  image-rendering: -webkit-optimize-contrast; }
+
+.dragIcon {
+  background: url("../images/drag.png") no-repeat;
+  height: 26px;
+  width: 26px;
+  display: inline-block;
+  image-rendering: -webkit-optimize-contrast; }
+
+.innerFilter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #d8d8d8;
+  border-radius: 3px;
+  transition: all .2s ease;
+  transform: scale3d(0, 0, 0);
+  transform-origin: top right; }
+  .innerFilter i {
+    cursor: pointer;
+    transform: scale3d(0.7, 0.7, 1);
+    image-rendering: -webkit-optimize-contrast;
+    position: relative;
+    top: 2px; }
+
+.tabl_inner:hover {
+  border: 2px solid #78ABC1; }
+  .tabl_inner:hover .innerFilter {
+    transform: scale3d(1, 1, 1); }
+
+.grid .handle {
+  background: url("../images/drag-w.png") no-repeat;
+  height: 26px;
+  width: 26px;
+  position: absolute;
+  display: inline-block;
+  background-color: #1fa9d0;
+  z-index: 9;
+  border-radius: 50% 0px 0px 50%;
+  left: -27px;
+  transform: translateY(-50%);
+  top: 50%;
+  cursor: all-scroll;
+  background-size: 20px auto;
+  background-position: center; }
+
+.structFiltrs {
+  position: absolute;
+  top: 0;
+  right: -26px;
+  transform-origin: top left;
+  width: 26px;
+  background: #1fa9d0;
+  transform: scale3d(0, 0, 0);
+  transition: all .3s ease; }
+  .structFiltrs .copyIcon {
+    background: url("../images/copy-w.png") no-repeat;
+    background-size: 20px auto;
+    background-position: center;
+    cursor: pointer; }
+  .structFiltrs .deleteIcon {
+    background: url("../images/trash-w.png") no-repeat;
+    background-size: 20px auto;
+    background-position: center;
+    cursor: pointer; }
+
+.grid:hover .structFiltrs {
+  transform: scale3d(1, 1, 1); }
 
 /*edtior*/
 .medium-toolbar-arrow-under:after {
