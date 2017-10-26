@@ -51,7 +51,7 @@ const gridTemplatesAll = {
 //grid template end
 const componentAll={
 	"ck_text" : `<p class="editor" ondblclick="makeEditable(event,this)" data-ce="1" class="ve_text" style="    border: 1px solid green;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>`,
-	"ck_button" : `<table width="100%" class="tabl_inner"><tr><td><div class="innerFilter"><i class="dragIcon dragInnerContent"></i><i class="copyIcon"></i><i class="deleteIcon"></i></div><input type="button" value="Button"  class="ve_button" style="background-color:#000000; color:#ffffff; font-size:16px; text-align:left;"  /></td></tr></table>`,
+	"ck_button" : `<table width="100%" class="tabl_inner"><tr><td><div class="innerFilter"><i class="dragIcon dragInnerContent"></i><i class="copyIcon" onclick="copyInrComponent();"></i><i class="deleteIcon" onclick="removeInrComponent();"></i></div><input type="button" value="Button"  class="ve_button" style="background-color:#000000; color:#ffffff; font-size:16px; text-align:left;"  /></td></tr></table>`,
 	"ck_blankrow" : `<p  class="ve_blank" style=" background-color:#ff0000;">Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.</p>`,
 	"ck_seprator" : `<p  class="ve_seprator" style="border-bottom:2px solid #000000;"></p>`,
 	"ck_raw" : `<h1  class="ve_raw editor" ondblclick="makeEditable(event,this)" data-ce="1">Why do we use it?</h1>`,
@@ -429,6 +429,7 @@ o.initDragula = function(){
 //used to set unique_id
 function setUniqueIdToEl(dataStr){
 	var id = "", arr;
+	dataStr = dataStr.replace(/(id="([^"]*?)")/,"");//if already id attr exist then remove it
 	arr = dataStr.split(/(class="ve)/g);
 	arr.forEach(function(el,i,ar){
 		if(el==='class="ve'){
@@ -536,3 +537,26 @@ var dragInside=dragula( [], {
     	return handle.classList.contains('dragInnerContent');
     }
 });
+
+
+//remove inner component
+function  removeInrComponent(){
+	var targetEl = event.target.closest("table.tabl_inner");
+	if(targetEl !== null)
+		targetEl.remove();
+
+	console.log("removed....");
+}
+
+//copy inner component
+function  copyInrComponent(){
+	var el = event.target.closest("table.tabl_inner"),
+		cloneEl = el.cloneNode(true);
+
+	if(el !== null){
+		cloneEl = setUniqueIdToEl(cloneEl.outerHTML);
+		el.insertAdjacentHTML('afterend', cloneEl);
+	}
+
+	console.log("copied....");	
+}
