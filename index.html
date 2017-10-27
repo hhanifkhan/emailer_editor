@@ -19,6 +19,17 @@
 	</style>
 </head>
 <body>
+<div class="overlay"></div>
+<article class="msgBox">
+	<h1>Are You Sure?</h1>
+	<div class="msgBoxContent">
+	</div>
+	<span>
+		<button class="delete" onclick="doDelete()">Delete</button>
+		<button class="cancel" onclick="doCancel()">Cancel</button>
+	</span>
+	<input type="hidden" name="msgbxval" value="false">
+</article>
 <header>
 	<ul class="mail_action">
 		<li><a>Preview</a></li>

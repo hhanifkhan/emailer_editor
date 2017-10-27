@@ -1,7 +1,7 @@
 //grid template
 const gridTemplatesAll = {
 	"grid_1" : `
-	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon"></i><i class="deleteIcon"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon" onclick="copyInrComponent('.grid');"></i><i class="deleteIcon" onclick="removeInrComponent('.grid');"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
 			<td class="ve_td initialTdClass" ondrop="handleDrop(event,this)" height="100%" data-c="false" width="100%" align="left" bgcolor="#ffffff" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
@@ -51,7 +51,7 @@ const gridTemplatesAll = {
 //grid template end
 const componentAll={
 	"ck_text" : `<p class="editor" ondblclick="makeEditable(event,this)" data-ce="1" class="ve_text" style="    border: 1px solid green;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>`,
-	"ck_button" : `<table width="100%" class="tabl_inner"><tr><td><div class="innerFilter"><i class="dragIcon dragInnerContent"></i><i class="copyIcon" onclick="copyInrComponent();"></i><i class="deleteIcon" onclick="removeInrComponent();"></i></div><input type="button" value="Button"  class="ve_button" style="background-color:#000000; color:#ffffff; font-size:16px; text-align:left;"  /></td></tr></table>`,
+	"ck_button" : `<table width="100%" class="tabl_inner"><tr><td><div class="innerFilter"><i class="dragIcon dragInnerContent"></i><i class="copyIcon" onclick="copyInrComponent('table.tabl_inner');"></i><i class="deleteIcon" onclick="removeInrComponent('table.tabl_inner');"></i></div><input type="button" value="Button"  class="ve_button" style="background-color:#000000; color:#ffffff; font-size:16px; text-align:left;"  /></td></tr></table>`,
 	"ck_blankrow" : `<p  class="ve_blank" style=" background-color:#ff0000;">Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.</p>`,
 	"ck_seprator" : `<p  class="ve_seprator" style="border-bottom:2px solid #000000;"></p>`,
 	"ck_raw" : `<h1  class="ve_raw editor" ondblclick="makeEditable(event,this)" data-ce="1">Why do we use it?</h1>`,
@@ -367,6 +367,10 @@ function renderUpdatedData(event,formName){
 
 }
 
+o.removeConfirmation = function(msg){
+	return confirm(msg);
+};
+
 o.init=function(){
 	o.filterOption();
 	o.initDragula();
@@ -429,7 +433,8 @@ o.initDragula = function(){
 //used to set unique_id
 function setUniqueIdToEl(dataStr){
 	var id = "", arr;
-	dataStr = dataStr.replace(/(id="([^"]*?)")/,"");//if already id attr exist then remove it
+	dataStr = dataStr.replace(/(id="([^"]*?)")/g,"");//if already id attr exist then remove it
+
 	arr = dataStr.split(/(class="ve)/g);
 	arr.forEach(function(el,i,ar){
 		if(el==='class="ve'){
@@ -539,22 +544,26 @@ var dragInside=dragula( [], {
 });
 
 
-//remove inner component
-function  removeInrComponent(){
-	var targetEl = event.target.closest("table.tabl_inner");
-	if(targetEl !== null)
-		targetEl.remove();
 
-	console.log("removed....");
+//remove inner component
+function  removeInrComponent(selectorToRemove){
+	if(o.removeConfirmation("You're about to delete a content block. Are you sure you want to do that?")){
+		var targetEl = event.target.closest(selectorToRemove);
+		if(targetEl !== null)
+			targetEl.remove();	
+	}
 }
 
+
+
+
 //copy inner component
-function  copyInrComponent(){
-	var el = event.target.closest("table.tabl_inner"),
+function  copyInrComponent(selectorToCopy){
+	var el = event.target.closest(selectorToCopy),
 		cloneEl = el.cloneNode(true);
 
 	if(el !== null){
-		cloneEl = setUniqueIdToEl(cloneEl.outerHTML);
+		cloneEl = setUniqueIdToEl(`${cloneEl.outerHTML}`);
 		el.insertAdjacentHTML('afterend', cloneEl);
 	}
 
