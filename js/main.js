@@ -7,28 +7,28 @@ const gridTemplatesAll = {
 		</tr>
 	</table>`,
 	"grid_2" : `
-	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon"></i><i class="deleteIcon"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon" onclick="copyInrComponent('.grid');"></i><i class="deleteIcon" onclick="removeInrComponent('.grid');"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
 			<td width="50%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%"  bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 			<td width="50%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%"  bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_2_1/3" : `
-	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon"></i><i class="deleteIcon"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon" onclick="copyInrComponent('.grid');"></i><i class="deleteIcon" onclick="removeInrComponent('.grid');"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
 			<td width="70%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 			<td width="30%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_2_3/1" : `
-	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon"></i><i class="deleteIcon"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon" onclick="copyInrComponent('.grid');"></i><i class="deleteIcon" onclick="removeInrComponent('.grid');"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
 			<td width="30%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 			<td width="70%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 		</tr>
 	</table>`,
 	"grid_3" : `
-	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon"></i><i class="deleteIcon"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon" onclick="copyInrComponent('.grid');"></i><i class="deleteIcon" onclick="removeInrComponent('.grid');"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
 			<td width="33%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 			<td width="33%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
@@ -37,7 +37,7 @@ const gridTemplatesAll = {
 	</table>
 	`,
 	"grid_4" : `
-	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon"></i><i class="deleteIcon"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<i class="handle"></i><span class="structFiltrs"><i class="copyIcon" onclick="copyInrComponent('.grid');"></i><i class="deleteIcon" onclick="removeInrComponent('.grid');"></i></span><table cellpadding="0" cellspacing="0" border="0" width="100%">
 		<tr>
 			<td width="25%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
 			<td width="25%" class="ve_td initialTdClass" ondrop="handleDrop(event,this)" data-c="false" height="100%" width="100%" bgcolor="" align="left" valign="middle" ondragover="handleAllowDrop(event)"></td>
@@ -75,6 +75,7 @@ const componentProps={
 		ta : "text-align",
 		td : "text-decoration",
 		bg : "background-color",
+		bi : "background-image",
 		bo : "border",
 		he : "height",
 		wi : "width",
@@ -105,7 +106,7 @@ const componentProps={
 		"atr" : ["val"]	
 	},
 	"td_prop" : {
-		"css" : ["co", "fs"],
+		"css" : ["co", "fs","bi"],
 		"atr" : ["bg", "al", "va", "he", "wi"]	
 	}
 };
@@ -547,7 +548,14 @@ var dragInside=dragula( [], {
 
 //remove inner component
 function  removeInrComponent(selectorToRemove){
-	if(o.removeConfirmation("You're about to delete a content block. Are you sure you want to do that?")){
+	var checker = false;
+	if(event.altKey){
+		checker = true;
+	}else{
+		checker = o.removeConfirmation("You're about to delete a content block. Are you sure you want to do that?\nHint: Hold the \"alt\" key while clicking the delete button to skip this dialog.");
+	}
+
+	if(checker){
 		var targetEl = event.target.closest(selectorToRemove);
 		if(targetEl !== null)
 			targetEl.remove();	
