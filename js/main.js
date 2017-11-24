@@ -1,3 +1,15 @@
+//some polyfills
+
+(function(){
+	if ( typeof NodeList.prototype.forEach === "function" ) return false;
+    NodeList.prototype.forEach = Array.prototype.forEach;
+}());
+if (!Element.prototype.matches)
+	    Element.prototype.matches =
+	        Element.prototype.msMatchesSelector ||
+	        Element.prototype.webkitMatchesSelector;	
+
+
 //grid template
 const gridTemplatesAll = {
 	"grid_1" : `
@@ -50,13 +62,13 @@ const gridTemplatesAll = {
 //test
 //grid template end
 const componentAll={
-	"ck_text" : `<p class="editor" ondblclick="makeEditable(event,this)" data-ce="1" class="ve_text" style="    border: 1px solid green;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>`,
-	"ck_button" : `<table width="100%" class="tabl_inner"><tr><td><div class="innerFilter"><i class="dragIcon dragInnerContent"></i><i class="copyIcon" onclick="copyInrComponent('table.tabl_inner');"></i><i class="deleteIcon" onclick="removeInrComponent('table.tabl_inner');"></i></div><input type="button" value="Button"  class="ve_button" style="background-color:#000000; color:#ffffff; font-size:16px; text-align:left;"  /></td></tr></table>`,
+	"ck_text" : `<p class="editor" ondblclick="makeEditable(event,this)" data-ce="1" class="ve_text" style="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>`,
+	"ck_button" : `<table width="100%" class="tabl_inner"><tr><td class="ve_buttontemp" height="100%"  width="100%" align="left" bgcolor="#ffffff" valign="middle" ><div class="innerFilter"><i class="dragIcon dragInnerContent"></i><i class="copyIcon" onclick="copyInrComponent('table.tabl_inner');"></i><i class="deleteIcon" onclick="removeInrComponent('table.tabl_inner');"></i></div><input type="button" value="Button"  class="ve_button" style="background-color:#000000; color:#ffffff; font-size:16px; text-align:left;"  /></td></tr></table>`,
 	"ck_blankrow" : `<p  class="ve_blank" style=" background-color:#ff0000;">Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.</p>`,
 	"ck_seprator" : `<p  class="ve_seprator" style="border-bottom:2px solid #000000;"></p>`,
 	"ck_raw" : `<h1  class="ve_raw editor" ondblclick="makeEditable(event,this)" data-ce="1">Why do we use it?</h1>`,
 	"ck_image" : `<img src="https://images5.alphacoders.com/637/thumb-1920-637668.jpg" class="ve_image" alt="this is image" width="100%" style="    border: 1px solid green;
-    color: red;
+    color: #ff0000;
     font-size: 10px;
     height: auto;
     width: 100%;" />`
@@ -102,10 +114,14 @@ const componentProps={
 		"atr" : ["sr","at"]
 	},
 	"button_prop" : {
-		"css" : ["co", "bg", "fs"],
+		"css" : ["co", "bg", "fs","wi","he","bo"],
 		"atr" : ["val"]	
 	},
 	"td_prop" : {
+		"css" : ["co", "fs","bi"],
+		"atr" : ["bg", "al", "va", "he", "wi"]	
+	},
+	"td_temp2" : {
 		"css" : ["co", "fs","bi"],
 		"atr" : ["bg", "al", "va", "he", "wi"]	
 	}
@@ -147,6 +163,7 @@ o.validate = function(elementToValidate){
 //set color change value
 function getColorNewValue(event){
 	console.log(event.target.value);
+	debugger;
 	// alert();
 	// alert(event.target.value);
 }
@@ -246,6 +263,18 @@ o.toggleClassTdOnFocus = function(a,b){
 	a.classList.add(b);
 };
 
+//convert rgb color code value to hex 
+o.rgbTohex = function(c){
+		if(c == ""){
+			return c;
+		}
+		rgb = c.match(/\d+/g);
+
+	    var bin = rgb[0] << 16 | rgb[1] << 8 | rgb[2];
+	    return (function(h){
+	        return '#'+ new Array(7-h.length).join("0")+h
+	    })(bin.toString(16).toUpperCase());
+};
 //when user click on element
 //It shows component layer element that can be manipulated here
 o.initImageEdit = function(){
@@ -263,6 +292,10 @@ o.initImageEdit = function(){
 			else if(e.target.matches(".ve_td")){
 				o.toggleClassTdOnFocus(e.target,"showHighlightedTd");//adding class
 				tm(e,"td_prop");
+			}
+			else if(e.target.matches(".ve_buttontemp")){
+				//o.toggleClassTdOnFocus(e.target,"showHighlightedTd");//adding class
+				tm(e,"td_temp2");
 			}
 		}
 
@@ -284,7 +317,7 @@ o.initImageEdit = function(){
 
 				
 				if(tmpCssProp === "color" || tmpCssProp === "background-color")
-					formTemp += o.genTemplateLogic("css_color",tmpCssProp, tmpCssPropVal);
+					formTemp += o.genTemplateLogic("css_color",tmpCssProp, o.rgbTohex(tmpCssPropVal));
 				else
 					formTemp += o.genTemplateLogic("css_normal",tmpCssProp, tmpCssPropVal);
 
@@ -354,7 +387,8 @@ function renderUpdatedData(event,formName){
 	console.log(_atrString);
 
 	//add css string to dom
-	whereToAppedData.style.cssText = _cssString;
+	//whereToAppedData.style.cssText = _cssString;
+	whereToAppedData.setAttribute("style", _cssString);
 
 	//add attribute string to dom
 	for(var k in _atrString){
@@ -474,8 +508,10 @@ function drag(ev,el) {
 	var position = componentAll[getComponentKey].indexOf('class="ve'),
 		currentCounter = id = newElAfterId = "";
 
-	id = 'id="uid'+(componentProps.counter+=1)+'" ';
-	newElAfterId = componentAll[getComponentKey].substr(0, position) + id + componentAll[getComponentKey].substr(position);
+	// id = 'id="uid'+(componentProps.counter+=1)+'" ';
+	// newElAfterId = componentAll[getComponentKey].substr(0, position) + id + componentAll[getComponentKey].substr(position);
+
+	newElAfterId = componentAll[getComponentKey].replace(/class="ve/gm,function(){return 'id="uid'+(componentProps.counter+=1)+'" class="ve'});
 
   // ev.dataTransfer.setData("text/html", ev.target.id);
   ev.dataTransfer.setData("text/html", newElAfterId); //new content

@@ -211,7 +211,8 @@ aside {
   font-size: 10px;
   color: #1695bd;
   display: block;
-  text-align: center; }
+  text-align: center;
+  padding: 15px; }
 
 .col {
   border: 1px solid #0e0e0e;
@@ -446,8 +447,7 @@ aside {
 
 .grid {
   display: block;
-  position: relative;
-  min-height: 40px; }
+  position: relative; }
   .grid > table > tbody > td {
     color: red; }
   .grid:hover {

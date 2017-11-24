@@ -51,7 +51,7 @@
 }
 .grid{
 	    display: block; position: relative;
-    min-height: 40px;
+    // min-height: 40px;
     >table > tbody> td{color:red}
     &:hover{ -webkit-box-shadow: 0 0 0 2px #03a9f4;
     box-shadow: 0 0 0 2px #03a9f4;z-index: 1;
