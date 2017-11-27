@@ -164,9 +164,6 @@
 		</section>
 	</section>
 </aside>
-<div class="tineditable"><h1>Inline Boundary Demo</h1>
-  <p>Starting in TinyMCE version 4.6.5 you can add the <code><a href="https://www.tinymce.com/docs/configure/content-appearance/#inline_boundaries">inline_boundaries_selector</a></code> configuration setting to <code>tinymce.init</code> to specify the elements that should have boundaries.</p>
-  <p>For example:</p></div>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-sham.min.js"></script> -->
 <script src='js/dragula.js'></script>
@@ -176,22 +173,7 @@
 <script src="js/main.js"></script>
 
 <script type="text/javascript">
-tinymce.init({
-  selector: '.tineditable',
-  inline:true,
-  height: 400,
-  statusbar:false,
-  menubar: false,
-  inline_boundaries_selector: 'a[href],code,b,i,em,strong,del,ins',
-  plugins: [
-    'autolink lists link image charmap print preview anchor textcolor',
-    'searchreplace visualblocks code fullscreen',
-    'insertdatetime media table contextmenu paste code help'
-  ],
-  toolbar: 'formatselect  bold italic bullist numlist blockquote  alignleft aligncenter alignright  link unlink forecolor backcolor ',
-  content_style: [
-    '.mce-content-body a[data-mce-selected], .mce-content-body code[data-mce-selected], .mce-content-body b[data-mce-selected], .mce-content-body strong[data-mce-selected], .mce-content-body i[data-mce-selected], .mce-content-body em[data-mce-selected], .mce-content-body ins[data-mce-selected], .mce-content-body del[data-mce-selected] {background-color:#e5f5fa}']
-});
+
 </script>
 </body>
 </html>

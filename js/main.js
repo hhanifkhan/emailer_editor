@@ -62,7 +62,7 @@ const gridTemplatesAll = {
 //test
 //grid template end
 const componentAll={
-	"ck_text" : `<p class="editor" ondblclick="makeEditable(event,this)" data-ce="1" class="ve_text" style="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>`,
+	"ck_text" : `<table width="100%" class="tabl_inner"><tr><td><div class="innerFilter"><i class="dragIcon dragInnerContent"></i><i class="copyIcon" onclick="copyInrComponent('table.tabl_inner');"></i><i class="deleteIcon" onclick="removeInrComponent('table.tabl_inner');"></i></div><div class="ve_editortemp">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div></td></tr></table>`,
 	"ck_button" : `<table width="100%" class="tabl_inner"><tr><td class="ve_buttontemp" height="100%"  width="100%" align="left" bgcolor="#ffffff" valign="middle" ><div class="innerFilter"><i class="dragIcon dragInnerContent"></i><i class="copyIcon" onclick="copyInrComponent('table.tabl_inner');"></i><i class="deleteIcon" onclick="removeInrComponent('table.tabl_inner');"></i></div><input type="button" value="Button"  class="ve_button" style="background-color:#000000; color:#ffffff; font-size:16px; text-align:left;"  /></td></tr></table>`,
 	"ck_blankrow" : `<p  class="ve_blank" style=" background-color:#ff0000;">Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.</p>`,
 	"ck_seprator" : `<p  class="ve_seprator" style="border-bottom:2px solid #000000;"></p>`,
@@ -406,6 +406,26 @@ o.removeConfirmation = function(msg){
 	return confirm(msg);
 };
 
+//create new editor
+o.createEditor = function(editorSelector){
+	tinymce.init({
+	  selector: editorSelector,
+	  inline:true,
+	  height: 400,
+	  statusbar:false,
+	  menubar: false,
+	  inline_boundaries_selector: 'a[href],code,b,i,em,strong,del,ins',
+	  plugins: [
+	    'autolink lists link image charmap print preview anchor textcolor',
+	    'searchreplace visualblocks code fullscreen',
+	    'insertdatetime media table contextmenu paste code help'
+	  ],
+	  toolbar: 'formatselect  bold italic bullist numlist blockquote  alignleft aligncenter alignright  link unlink forecolor backcolor ',
+	  // content_style: [
+	  //   '.mce-content-body a[data-mce-selected], .mce-content-body code[data-mce-selected], .mce-content-body b[data-mce-selected], .mce-content-body strong[data-mce-selected], .mce-content-body i[data-mce-selected], .mce-content-body em[data-mce-selected], .mce-content-body ins[data-mce-selected], .mce-content-body del[data-mce-selected] {background-color:#e5f5fa}']
+	});
+}
+
 o.init=function(){
 	o.filterOption();
 	o.initDragula();
@@ -538,6 +558,10 @@ function handleDrop(ev,el){
 	  	console.log(data);
 	  	el.innerHTML +=  data;
   }
+  var checkEditorClass = el.querySelector(".ve_editortemp");
+  if(checkEditorClass !== null){
+  	o.createEditor('#' + checkEditorClass.getAttribute("id"));
+  }
 }
 
 //**component drag and drop ends**//
@@ -609,6 +633,23 @@ function  copyInrComponent(selectorToCopy){
 	if(el !== null){
 		cloneEl = setUniqueIdToEl(`${cloneEl.outerHTML}`);
 		el.insertAdjacentHTML('afterend', cloneEl);
+		
+		//if copied element is editor only sigle copy not multiplegroup
+		// var checkEditorClass = el.querySelector(".ve_editortemp");
+		// if(checkEditorClass !== null){
+		//   	o.createEditor('#uid' + componentProps.counter);
+		// }
+		var xmlString = ""+cloneEl+"",
+			parser = new DOMParser(),
+			doc = parser.parseFromString(xmlString, "text/xml");
+			
+		var checkEditArr = doc.querySelectorAll(".ve_editortemp");
+		checkEditArr.forEach(function(element,index,arr){
+			if(element !== null){
+			  	o.createEditor('#' + element.getAttribute("id"));
+			}
+		});
+		
 	}
 
 	console.log("copied....");	

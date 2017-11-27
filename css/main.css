@@ -1,4 +1,4 @@
-* {
+aside, aside *, header *, header, .wrapper, #right, .handle, .structFiltrs, .structFiltrs *, .innerFilter, .innerFilter *, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
@@ -489,6 +489,7 @@ aside {
   top: 0;
   right: 0;
   background: #d8d8d8;
+  z-index: 9;
   border-radius: 3px;
   transition: all .2s ease;
   transform: scale3d(0, 0, 0);

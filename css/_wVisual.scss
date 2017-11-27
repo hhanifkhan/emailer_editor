@@ -63,7 +63,7 @@ td{height:auto; border:none;}
 .copyIcon{background: url('../images/copy.png') no-repeat; height:26px; width:26px; display:inline-block;    image-rendering: -webkit-optimize-contrast;}
 .deleteIcon{background: url('../images/trash.png') no-repeat; height:26px; width:26px; display:inline-block;    image-rendering: -webkit-optimize-contrast;}
 .dragIcon{background: url('../images/drag.png') no-repeat; height:26px; width:26px; display:inline-block;    image-rendering: -webkit-optimize-contrast;}
-.innerFilter{position: absolute; top: 0; right: 0;background: #d8d8d8;
+.innerFilter{position: absolute; top: 0; right: 0;background: #d8d8d8;z-index: 9;
     border-radius: 3px;    transition: all .2s ease;transform: scale3d(0,0,0);
     transform-origin: top right;
     i{cursor: pointer;transform: scale3d(.7,.7,1);    image-rendering: -webkit-optimize-contrast;    position: relative;
