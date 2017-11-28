@@ -459,7 +459,7 @@ aside {
 .tabl_inner {
   position: relative;
   border: 2px solid transparent; }
-  .tabl_inner td {
+  .tabl_inner > tr > td, .tabl_inner > tbody > tr > td {
     height: auto;
     border: none; }
 

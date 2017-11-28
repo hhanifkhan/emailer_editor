@@ -406,7 +406,7 @@ o.removeConfirmation = function(msg){
 	return confirm(msg);
 };
 
-//create new editor
+//create new editor tinymce
 o.createEditor = function(editorSelector){
 	tinymce.init({
 	  selector: editorSelector,
@@ -420,7 +420,8 @@ o.createEditor = function(editorSelector){
 	    'searchreplace visualblocks code fullscreen',
 	    'insertdatetime media table contextmenu paste code help'
 	  ],
-	  toolbar: 'formatselect  bold italic bullist numlist blockquote  alignleft aligncenter alignright  link unlink forecolor backcolor ',
+	  toolbar: 'formatselect fontselect  bold italic bullist numlist blockquote  alignleft aligncenter alignright  link unlink forecolor backcolor ',
+	  font_formats: 'Arial=arial,helvetica,sans-serif;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Tahoma=tahoma,arial,helvetica,sans-serif;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;',
 	  // content_style: [
 	  //   '.mce-content-body a[data-mce-selected], .mce-content-body code[data-mce-selected], .mce-content-body b[data-mce-selected], .mce-content-body strong[data-mce-selected], .mce-content-body i[data-mce-selected], .mce-content-body em[data-mce-selected], .mce-content-body ins[data-mce-selected], .mce-content-body del[data-mce-selected] {background-color:#e5f5fa}']
 	});

@@ -58,7 +58,7 @@
     outline: none;}
 }
 .tabl_inner{position: relative;    border: 2px solid rgba(0,0,0,0);
-td{height:auto; border:none;}
+ > tr > td,> tbody > tr > td{height:auto; border:none;}
 }
 .copyIcon{background: url('../images/copy.png') no-repeat; height:26px; width:26px; display:inline-block;    image-rendering: -webkit-optimize-contrast;}
 .deleteIcon{background: url('../images/trash.png') no-repeat; height:26px; width:26px; display:inline-block;    image-rendering: -webkit-optimize-contrast;}
